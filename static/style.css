@@ -1,0 +1,109 @@
+body {
+	font-family: "Segoe UI", "Microsoft JhengHei", Arial, sans-serif;
+	background: #181c24;
+	margin: 0;
+	padding: 0;
+	color: #e2e8f0;
+}
+
+.main-layout {
+	display: block; /* 讓內容正常流動 */
+}
+
+.container {
+	flex: 7;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 100%;
+	background: #23283a;
+	border-radius: 14px 0 0 14px;
+	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.22);
+	padding: 2.5em 2em;
+	margin: 3em 26vw 3em 3em; /* 右側預留空間給 navbar */
+}
+
+.navbar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 24vw; /* 3/10 螢幕寬度，依需求可調整 */
+	max-width: 320px; /* 最大寬度限制 */
+	min-width: 180px;
+	height: 100vh;
+	background: #23283a;
+	box-shadow: -2px 0 12px rgba(0, 0, 0, 0.18);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	border-radius: 0 14px 14px 0;
+	padding-left: 2em;
+	z-index: 100;
+}
+
+.navbar ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.navbar li {
+	margin: 1.2em 0;
+}
+
+.navbar a {
+	color: #e2e8f0;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 1.1em;
+	transition: color 0.2s, background 0.2s;
+	padding: 0.5em 1.2em;
+	border-radius: 6px;
+	display: block;
+}
+
+.navbar a:hover {
+	background: #374151;
+	color: #63b3ed;
+}
+
+/* 其餘原有樣式可保留 */
+
+@media (max-width: 900px) {
+	.main-layout {
+		flex-direction: column;
+	}
+	.container,
+	.navbar {
+		border-radius: 14px;
+		margin: 1em;
+		min-width: unset;
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+	.navbar {
+		position: static;
+		width: 100%;
+		height: auto;
+		border-radius: 14px;
+		box-shadow: none;
+		padding: 0.5em 0;
+		max-width: unset;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+	.navbar ul {
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+	}
+	.navbar li {
+		margin: 0 1em;
+	}
+}
