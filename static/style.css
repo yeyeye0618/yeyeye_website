@@ -7,39 +7,41 @@ body {
 }
 
 .main-layout {
-	display: block; /* 讓內容正常流動 */
+	display: inline-flex;
+	width: 100vw;
+	min-height: 100vh;
 }
 
 .container {
 	flex: 7;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	max-width: 100%;
 	background: #23283a;
 	border-radius: 14px 0 0 14px;
 	box-shadow: 0 4px 24px rgba(0, 0, 0, 0.22);
 	padding: 2.5em 2em;
-	margin: 3em 26vw 3em 3em; /* 右側預留空間給 navbar */
+	margin: 3em 0 3em 3em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .navbar {
-	position: fixed;
-	top: 0;
+	position: sticky;
+	top: 200px;
 	right: 0;
-	width: 24vw; /* 3/10 螢幕寬度，依需求可調整 */
-	max-width: 320px; /* 最大寬度限制 */
-	min-width: 180px;
-	height: 100vh;
+	margin-right: 10em; /* 新增這行，讓 navbar 離右邊有間距 */
+	align-self: flex-start;
+	height: fit-content;
+	flex: 3;
 	background: #23283a;
 	box-shadow: -2px 0 12px rgba(0, 0, 0, 0.18);
+	border-radius: 0 14px 14px 0;
+	padding-left: 2em;
+	min-width: 180px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
-	border-radius: 0 14px 14px 0;
-	padding-left: 2em;
 	z-index: 100;
 }
 
